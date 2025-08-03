@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import "next-auth/jwt";
-import GitHub from "@auth/core/providers/github";
+import GitHub from "next-auth/providers/github";
 import Onshape from "./onshape";
 /*
 import Apple from "@auth/core/providers/apple";
@@ -49,6 +49,7 @@ const storage = createStorage({
     : memoryDriver(),
 });
 
+// This is the important line
 export const { handlers, auth, signIn, signOut } = NextAuth({
   debug: !!process.env.AUTH_DEBUG,
   theme: { logo: "https://authjs.dev/img/logo-sm.png" },
