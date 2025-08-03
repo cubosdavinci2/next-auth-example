@@ -55,7 +55,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   theme: { logo: "https://authjs.dev/img/logo-sm.png" },
   adapter: UnstorageAdapter(storage),
   providers: [
-    GitHub,
+    GitHub({
+      process.env.AUTH_ONSHAPE_ID
+      process.env.AUTH_ONSHAPE_ID
+    }),
     Onshape({
       clientId: process.env.AUTH_ONSHAPE_ID,
       clientSecret: process.env.AUTH_ONSHAPE_SECRET,
